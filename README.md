@@ -14,6 +14,7 @@ pandas
 sklearn
 Pillow
 mahotas
+scikit-image
 
 
 
