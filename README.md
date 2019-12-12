@@ -2,7 +2,8 @@
 
 M-TRACK is a live cell imaging analysis tool. 
 
-The package is written in Python 3.7.
+The package is written in Python 3.7. Parts of the source code are adapted from Celltool https://github.com/zpincus/celltool and https://github.com/Yurui-Li/Stay-Point-Identification. 
+
 
 requirement:
 wx
