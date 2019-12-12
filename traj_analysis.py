@@ -334,34 +334,34 @@ def Traj_analysis(input_path, output_path, minimum_traj_length, ax1_1, ax1_2, fi
     # In[17]:
 
 
-    #----------choose a trajectory from folder
-    single_cell_traj=sct_list[1]
-    plottraj_message = 'trajectory plotted'
-    with open (single_cell_traj, 'rb') as fp:
-        sct = pickle.load(fp)
-    if hasattr(sct,'traj_scale_cord') and hasattr(sct,'traj_fluor_scale_haralick_pca_cord'):
-        if sct.traj_scale_cord is not None:
+    # #----------choose a trajectory from folder
+    # single_cell_traj=sct_list[1]
+    # plottraj_message = 'trajectory plotted'
+    # with open (single_cell_traj, 'rb') as fp:
+        # sct = pickle.load(fp)
+    # if hasattr(sct,'traj_scale_cord') and hasattr(sct,'traj_fluor_scale_haralick_pca_cord'):
+        # if sct.traj_scale_cord is not None:
 
-            mask=sct.traj_fluor_feature_values[0]!=0
+            # mask=sct.traj_fluor_feature_values[0]!=0
 
-            traj_t=sct.traj_seri[mask][:,0]
-            morph_traj=sct.traj_scale_cord[mask]
-            fluor_traj=sct.traj_fluor_scale_haralick_pca_cord[mask]
+            # traj_t=sct.traj_seri[mask][:,0]
+            # morph_traj=sct.traj_scale_cord[mask]
+            # fluor_traj=sct.traj_fluor_scale_haralick_pca_cord[mask]
 
-            dot_color=np.arange(morph_traj.shape[0])
-            cm=plt.cm.get_cmap('jet')
-            # plt.title('single cell trajectory plot',fontsize=16)
-            colorbar_instance = fig2.gca().scatter(morph_traj[:,0],fluor_traj[:,0],c=dot_color,cmap=cm)
-            fig2.gca().set_xlabel('Scaled Morphology PC1',fontsize=16)
-            fig2.gca().set_ylabel('Scaled Fluorescence PC1',fontsize=16)
-            fig2.colorbar(colorbar_instance)
-            # plt.show()
-        else:
-            plottraj_message =  'cannot plot trajectory, sct.traj_scale_cord is None'
-    else:
-         plottraj_message = 'cannot plot trajectory  not hasattr(sct, "traj_scale_cord") or not hasattr(sct, "traj_fluor_scale_haralick_pca_cord")'
+            # dot_color=np.arange(morph_traj.shape[0])
+            # cm=plt.cm.get_cmap('jet')
+            # # plt.title('single cell trajectory plot',fontsize=16)
+            # colorbar_instance = fig2.gca().scatter(morph_traj[:,0],fluor_traj[:,0],c=dot_color,cmap=cm)
+            # fig2.gca().set_xlabel('Scaled Morphology PC1',fontsize=16)
+            # fig2.gca().set_ylabel('Scaled Fluorescence PC1',fontsize=16)
+            # fig2.colorbar(colorbar_instance)
+            # # plt.show()
+        # else:
+            # plottraj_message =  'cannot plot trajectory, sct.traj_scale_cord is None'
+    # else:
+         # plottraj_message = 'cannot plot trajectory  not hasattr(sct, "traj_scale_cord") or not hasattr(sct, "traj_fluor_scale_haralick_pca_cord")'
 
-    return morph_pca.explained_variance_ratio_, fluor_pca.explained_variance_ratio_, plottraj_message
+    return morph_pca.explained_variance_ratio_, fluor_pca.explained_variance_ratio_, ''
 
 def Draw_chosen_traj(single_cell_traj, fig):
     print(single_cell_traj)
