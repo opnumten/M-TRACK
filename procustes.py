@@ -1,10 +1,3 @@
-# Copyright 2007 Zachary Pincus
-# This file is part of CellTool.
-# 
-# CellTool is free software; you can redistribute it and/or modify
-# it under the terms of version 2 of the GNU General Public License as
-# published by the Free Software Foundation.
-
 def procustes_alignment(points, reference, weights = None, allow_reflection = False, find_scale = True, find_translation = True):
     """Find the rigid transformation that optimally aligns the given points to the
     reference points in a least-squares sense. The 'points' and 'references' parameters
